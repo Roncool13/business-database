@@ -122,7 +122,7 @@ class BusinessTest(TestCase):
         """ Test searchBusiness Query to get business record for name starting with certain keyword """
         query = '''
             query {
-              searchBusiness(name_Icontains: "fire"){
+              searchBusiness(name_Istartswith: "fire"){
                 edges{
                   node{
                     name,
