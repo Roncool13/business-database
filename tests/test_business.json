@@ -1,0 +1,24 @@
+{
+  "data": {
+    "allBusiness": [
+      {
+        "name": "SoftBank",
+        "owner": "Masayoshi Son",
+        "address": "Tokyo, Japan",
+        "employeeCount": 10001
+      },
+      {
+        "name": "Fireblocks",
+        "owner": "Idan Ofrat",
+        "address": "New York, New York, United States",
+        "employeeCount": 250
+      },
+      {
+        "name": "Zomato",
+        "owner": "Gaurav Gupta",
+        "address": "Gurgaon, Haryana, India",
+        "employeeCount": 5001
+      }
+    ]
+  }
+}

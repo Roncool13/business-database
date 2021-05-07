@@ -1,0 +1,45 @@
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: demo
+#spec:
+#  containers:
+#  - name: testpod
+#    image: alpine:3.5
+#    command: ["ping", "8.8.8.8"]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: business-info-k8
+  labels:
+    business: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      business: web
+  template:
+    metadata:
+      labels:
+        business: web
+    spec:
+      containers:
+      - name: business-info
+        image: 111369/business-database:latest
+        ports:
+          - containerPort: 8000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: business-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    business: web
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30003
